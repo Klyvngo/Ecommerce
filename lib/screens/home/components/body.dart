@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'categories.dart';
 import 'discount_banner.dart';
 import 'home_header.dart';
+import 'special_offer.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -24,6 +25,7 @@ class Body extends StatelessWidget {
           ),
           const DiscountBanner(),
           const Categories(),
+          const SpecialOffer(),
         ],
       )),
     );
