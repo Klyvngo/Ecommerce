@@ -1,5 +1,6 @@
 import 'package:ecomerce/constants.dart';
 import 'package:ecomerce/models/product.dart';
+import 'package:ecomerce/screens/details/details_screen.dart';
 import 'package:ecomerce/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -23,7 +24,10 @@ class ProductCard extends StatelessWidget {
       child: SizedBox(
         width: getProportionateScreenWidth(width!),
         child: GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context)
+                .pushNamed(DetailScreen.routeName, arguments: product);
+          },
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[

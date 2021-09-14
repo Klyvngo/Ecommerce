@@ -1,3 +1,4 @@
+import 'package:ecomerce/screens/cart/cart_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../size_config.dart';
@@ -22,7 +23,9 @@ class HomeHeader extends StatelessWidget {
           IconBtnWithCounter(
             iconUrl: 'assets/icons/Cart Icon.svg',
             numberCounter: 0,
-            press: () {},
+            press: () {
+              Navigator.of(context).pushNamed(CartScreen.routeName);
+            },
           ),
           IconBtnWithCounter(
             iconUrl: 'assets/icons/Bell.svg',

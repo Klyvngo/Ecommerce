@@ -1,3 +1,4 @@
+import 'package:ecomerce/screens/cart/cart_screen.dart';
 import 'package:ecomerce/screens/details/details_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -18,4 +19,5 @@ final Map<String, WidgetBuilder> routes = {
   OtpScreen.routeName: (context) => const OtpScreen(),
   HomeScreen.routeName: (context) => const HomeScreen(),
   DetailScreen.routeName: (context) => const DetailScreen(),
+  CartScreen.routeName: (context) => const CartScreen(),
 };
