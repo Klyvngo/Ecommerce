@@ -3,6 +3,7 @@ import 'package:ecomerce/enums.dart';
 import 'package:ecomerce/screens/home/home_screen.dart';
 import 'package:ecomerce/screens/profile_edit/profile_home_screens.dart';
 import 'package:ecomerce/size_config.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -54,7 +55,12 @@ class CustomBottomNavigatorBar extends StatelessWidget {
             ),
             IconButton(
               onPressed: () {},
-              icon: SvgPicture.asset('assets/icons/Chat bubble Icon.svg'),
+              icon: Icon(
+                CupertinoIcons.square_list,
+                color: MenuState.edit == selectMenu
+                    ? kPrimaryColor
+                    : inActiveIconColor,
+              ),
             ),
             IconButton(
               onPressed: () {

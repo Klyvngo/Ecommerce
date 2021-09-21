@@ -6,7 +6,20 @@ class Products with ChangeNotifier {
   String? authToken = '';
   String? userId;
   Products(this._items, [this.authToken, this.userId]);
+  List<Product> get items {
+    return [..._items];
+  }
+
+  List<Product> get itemsFavo {
+    return _items.where((prod) => prod.isFavourite).toList();
+  }
+
+  Product findById(String id) {
+    return _items.firstWhere((prod) => prod.id == id);
+  }
+
   //Future void fetch product
+  Future<void> fetchProduct() async {}
   //Future void add product
   //Future void del product
   //Future void edit product
