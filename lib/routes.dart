@@ -1,6 +1,7 @@
 import 'package:ecomerce/screens/cart/cart_screen.dart';
 import 'package:ecomerce/screens/details/details_screen.dart';
 import 'package:ecomerce/screens/edit_product/edit_product_screen.dart';
+import 'package:ecomerce/screens/edit_product/update_product_screen.dart';
 import 'package:ecomerce/screens/profile_edit/profile_home_screens.dart';
 import 'package:flutter/material.dart';
 
@@ -24,4 +25,5 @@ final Map<String, WidgetBuilder> routes = {
   CartScreen.routeName: (context) => const CartScreen(),
   ProfileHomeScreen.routeName: (context) => const ProfileHomeScreen(),
   EditProductScreen.routeName: (context) => const EditProductScreen(),
+  UpdateProduct.routeName: (context) => const UpdateProduct(),
 };

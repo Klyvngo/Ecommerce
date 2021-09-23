@@ -1,6 +1,8 @@
 import 'package:ecomerce/components/custom_bottom_navigatorbar.dart';
 import 'package:ecomerce/constants.dart';
 import 'package:ecomerce/enums.dart';
+import 'package:ecomerce/screens/edit_product/update_product_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'components/body.dart';
@@ -17,6 +19,14 @@ class EditProductScreen extends StatelessWidget {
           'Edit Product',
           style: textStyle,
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(UpdateProduct.routeName);
+            },
+            icon: const Icon(CupertinoIcons.add_circled_solid),
+          )
+        ],
       ),
       bottomNavigationBar: const CustomBottomNavigatorBar(
         selectMenu: MenuState.edit,

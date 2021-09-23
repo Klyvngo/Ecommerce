@@ -1,5 +1,6 @@
 import 'package:ecomerce/constants.dart';
 import 'package:ecomerce/enums.dart';
+import 'package:ecomerce/screens/edit_product/edit_product_screen.dart';
 import 'package:ecomerce/screens/home/home_screen.dart';
 import 'package:ecomerce/screens/profile_edit/profile_home_screens.dart';
 import 'package:ecomerce/size_config.dart';
@@ -54,7 +55,9 @@ class CustomBottomNavigatorBar extends StatelessWidget {
               icon: SvgPicture.asset('assets/icons/Heart Icon.svg'),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(EditProductScreen.routeName);
+              },
               icon: Icon(
                 CupertinoIcons.square_list,
                 color: MenuState.edit == selectMenu
