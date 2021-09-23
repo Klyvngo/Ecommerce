@@ -3,6 +3,8 @@ import 'package:ecomerce/models/products.dart';
 import 'package:ecomerce/size_config.dart';
 import 'package:flutter/material.dart';
 
+import '../../../constants.dart';
+
 class EditProduct extends StatefulWidget {
   const EditProduct({Key? key, required this.productId}) : super(key: key);
   final int? productId;
@@ -16,7 +18,12 @@ class _EditProductState extends State<EditProduct> {
   final _titleController = TextEditingController();
   final _priceController = TextEditingController();
   final _descriptionController = TextEditingController();
-  final List<Color> colors = [];
+  final List<Color> _initColors = [
+    const Color(0xFFF6625E),
+    const Color(0xFF836DB8),
+    const Color(0xFFDECB9C),
+    Colors.white,
+  ];
   final List<String> images = [];
   var _editProduct = Product(
       id: -1, images: [], colors: [], title: '', price: 0.0, description: '');
@@ -25,6 +32,7 @@ class _EditProductState extends State<EditProduct> {
     'price': '',
     'description': '',
   };
+  List<Color> colors = [];
 
   @override
   void didChangeDependencies() {
@@ -37,7 +45,24 @@ class _EditProductState extends State<EditProduct> {
         'price': _editProduct.price.toString(),
         'description': _editProduct.description,
       };
+      colors = _editProduct.colors;
     }
+  }
+
+  void _checkColor(int index) {
+    if (colors.contains(_initColors[index])) {
+      setState(() {
+        colors.remove(_initColors[index]);
+      });
+    } else {
+      setState(() {
+        colors.add(_initColors[index]);
+      });
+    }
+  }
+
+  bool isSelect(Color color) {
+    return colors.contains(color);
   }
 
   @override
@@ -50,25 +75,65 @@ class _EditProductState extends State<EditProduct> {
         key: _formKey,
         child: ListView(
           children: <Widget>[
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             TextFormField(
               initialValue: _initValue['title'],
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Title',
                 hintText: 'Enter title product',
               ),
               maxLines: 1,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             TextFormField(
               initialValue: _initValue['price'],
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(labelText: 'Price'),
+              keyboardType:
+                  const TextInputType.numberWithOptions(decimal: true),
+              decoration: const InputDecoration(
+                  labelText: 'Price', hintText: 'Enter price product'),
               maxLines: 1,
+            ),
+            Text(
+              'Pick color',
+              style: TextStyle(
+                color: Colors.black,
+              ),
+            ),
+            Row(
+              children: [
+                ...List.generate(
+                  _initColors.length,
+                  (index) => GestureDetector(
+                    onTap: () {
+                      _checkColor(index);
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.only(right: 3),
+                      padding: const EdgeInsets.all(3),
+                      height: getProportionateScreenWidth(40),
+                      width: getProportionateScreenWidth(40),
+                      decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: isSelect(_initColors[index])
+                                ? kPrimaryColor
+                                : Colors.transparent,
+                          )),
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          color: _initColors[index],
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             )
           ],
         ),

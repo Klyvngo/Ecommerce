@@ -19,10 +19,12 @@ class UpdateProduct extends StatelessWidget {
           'Update product',
           style: textStyle,
         ),
+        backgroundColor: const Color(0xFFF5F6F9),
       ),
       body: EditProduct(
         productId: prodId,
       ),
+      backgroundColor: const Color(0xFFF5F6F9),
     );
   }
 }
