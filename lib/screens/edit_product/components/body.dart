@@ -26,10 +26,8 @@ class _BodyState extends State<Body> {
             key: Key(demoProducts[index].id.toString()),
             onTap: () {
               setState(() {
-                demoProducts.removeAt(index);
-                Navigator.of(context).pushNamed(
-                  UpdateProduct.routeName,
-                );
+                Navigator.of(context).pushNamed(UpdateProduct.routeName,
+                    arguments: demoProducts[index].id);
               });
             },
             child: CardProduct(
