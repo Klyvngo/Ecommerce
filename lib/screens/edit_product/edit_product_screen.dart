@@ -22,8 +22,8 @@ class EditProductScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.of(context)
-                  .pushNamed(UpdateProduct.routeName, arguments: -1);
+              Navigator.of(context).pushNamed(UpdateProduct.routeName,
+                  arguments: [-1, MenuEditProduct.add]);
             },
             icon: const Icon(CupertinoIcons.add_circled_solid),
           )

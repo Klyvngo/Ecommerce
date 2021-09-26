@@ -1,3 +1,4 @@
+import 'package:ecomerce/enums.dart';
 import 'package:ecomerce/models/product.dart';
 import 'package:ecomerce/models/products.dart';
 import 'package:ecomerce/screens/edit_product/update_product_screen.dart';
@@ -27,7 +28,7 @@ class _BodyState extends State<Body> {
             onTap: () {
               setState(() {
                 Navigator.of(context).pushNamed(UpdateProduct.routeName,
-                    arguments: demoProducts[index].id);
+                    arguments: [demoProducts[index].id, MenuEditProduct.edit]);
               });
             },
             child: CardProduct(
