@@ -237,7 +237,7 @@ class _EditProductState extends State<EditProduct> {
                                 height: 30,
                                 width: 30,
                                 margin: const EdgeInsets.only(right: 8),
-                                child: Image.asset(images[index]),
+                                child: Image.network(images[index]),
                               ),
                             ),
                           ),
@@ -265,7 +265,7 @@ class _EditProductState extends State<EditProduct> {
                               padding: const EdgeInsets.all(8.0),
                               child: FittedBox(
                                 fit: BoxFit.cover,
-                                child: Image.asset(
+                                child: Image.network(
                                   images[imageSelect],
                                   height: 100,
                                   width: 100,

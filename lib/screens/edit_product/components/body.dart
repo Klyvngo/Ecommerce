@@ -62,7 +62,7 @@ class CardProduct extends StatelessWidget {
                 color: const Color(0xFFF5F6F9),
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Image.asset(prod!.images[0]),
+              child: Image.network(prod!.images[0]),
             ),
           ),
         ),

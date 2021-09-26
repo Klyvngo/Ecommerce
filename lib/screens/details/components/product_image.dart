@@ -24,7 +24,7 @@ class _ProductImageState extends State<ProductImage> {
             aspectRatio: 1,
             child: Hero(
                 tag: widget.product!.id.toString(),
-                child: Image.asset(widget.product!.images[selectImage])),
+                child: Image.network(widget.product!.images[selectImage])),
           ),
         ),
         Row(
@@ -59,7 +59,7 @@ class _ProductImageState extends State<ProductImage> {
             )),
         height: getProportionateScreenWidth(48),
         width: getProportionateScreenWidth(48),
-        child: Image.asset(widget.product!.images[index]),
+        child: Image.network(widget.product!.images[index]),
       ),
     );
   }

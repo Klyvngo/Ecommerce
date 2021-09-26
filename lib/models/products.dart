@@ -29,10 +29,10 @@ List<Product> demoProducts = [
   Product(
     id: 1,
     images: [
-      "assets/images/ps4_console_white_1.png",
-      "assets/images/ps4_console_white_2.png",
-      "assets/images/ps4_console_white_3.png",
-      "assets/images/ps4_console_white_4.png",
+      "https://2.pik.vn/2021af77a707-929b-49f2-a707-7082c2776b5a.png",
+      "https://2.pik.vn/202169f41434-dba4-4509-9675-f295871d9d8a.png",
+      "https://2.pik.vn/2021e4573d63-2d56-4cd9-9074-aa6a59fad554.png",
+      "https://2.pik.vn/202113c35866-ee24-46d9-b71d-a58b7a32a2a0.png",
     ],
     colors: [
       const Color(0xFFF6625E),
@@ -50,7 +50,7 @@ List<Product> demoProducts = [
   Product(
     id: 2,
     images: [
-      "assets/images/Image Popular Product 2.png",
+      "https://2.pik.vn/2021db6a6fd3-6e47-4335-8b0c-7c7486def201.png",
     ],
     colors: [
       const Color(0xFFF6625E),
@@ -67,7 +67,7 @@ List<Product> demoProducts = [
   Product(
     id: 3,
     images: [
-      "assets/images/glap.png",
+      "https://2.pik.vn/2021c8e1575b-1d2e-4a8f-8e7a-acd354dafd51.png",
     ],
     colors: [
       const Color(0xFFF6625E),
@@ -85,7 +85,7 @@ List<Product> demoProducts = [
   Product(
     id: 4,
     images: [
-      "assets/images/wireless headset.png",
+      "https://2.pik.vn/2021b9773c9e-ee2d-40fa-b3e8-7a26492b7679.png",
     ],
     colors: [
       const Color(0xFFF6625E),

@@ -25,13 +25,15 @@ class SpecialOffer extends StatelessWidget {
             children: <Widget>[
               SpecialOfferCard(
                 text: 'Smartphone',
-                imageUrl: 'assets/images/Image Banner 2.png',
+                imageUrl:
+                    'https://2.pik.vn/202137028456-7352-4670-bde6-4440317f3e53.png',
                 numberOfBrands: 4,
                 press: () {},
               ),
               SpecialOfferCard(
                 text: 'Fashion',
-                imageUrl: 'assets/images/Image Banner 3.png',
+                imageUrl:
+                    'https://2.pik.vn/2021f32e216c-93b0-418d-97c5-ba0d6a0382a8.png',
                 numberOfBrands: 24,
                 press: () {},
               ),
@@ -70,7 +72,7 @@ class SpecialOfferCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(15),
             child: Stack(
               children: [
-                Image.asset(
+                Image.network(
                   imageUrl!,
                   fit: BoxFit.cover,
                 ),
